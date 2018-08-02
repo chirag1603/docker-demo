@@ -12,7 +12,7 @@ node {
        sh 'npm install ms -S --only=dev'
        sh 'npm install inherits'
        sh 'npm install mocha'
-       sh 'npm test'
+       //sh 'npm test'
      }
    }
    stage('test with a DB') {

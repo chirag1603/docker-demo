@@ -8,6 +8,8 @@ node {
    stage('test') {
      nodejs(nodeJSInstallationName: 'nodejs') {
        sh 'npm install ms -S --only=dev'
+       sh 'npm uninstall -g ionic'
+       sh 'npm install -g ionic'
        sh 'npm test'
      }
    }

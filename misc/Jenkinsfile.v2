@@ -19,7 +19,7 @@ node {
      def mysql = docker.image('mysql').run("-e MYSQL_ALLOW_EMPTY_PASSWORD=yes") 
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
-     myTestContainer.inside("--link ${mysql.id}:mysql") { // using linking, mysql will be available at host: mysql, port: 3306
+     myTestContainer.inside() { // using linking, mysql will be available at host: mysql, port: 3306
        sh 'npm install ms -S --only=dev'
        sh 'npm install inherits'
        sh 'npm install mocha'

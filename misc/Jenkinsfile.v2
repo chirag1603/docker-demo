@@ -11,6 +11,7 @@ node {
      myTestContainer.inside {
        sh 'npm install ms -S --only=dev'
        sh 'npm install inherits'
+       sh 'npm install -g mocha'
        sh 'npm test'
      }
    }
@@ -21,6 +22,7 @@ node {
      myTestContainer.inside("--link ${mysql.id}:mysql") { // using linking, mysql will be available at host: mysql, port: 3306
        sh 'npm install ms -S --only=dev'
        sh 'npm install inherits'
+       sh 'npm install -g mocha'
        sh 'npm test'                     
      }                                   
      mysql.stop()
